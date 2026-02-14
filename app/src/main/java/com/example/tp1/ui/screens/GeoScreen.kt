@@ -34,7 +34,7 @@ import java.math.RoundingMode
 import java.text.DecimalFormat
 
 @Composable
-fun NewCity(
+fun GeoScreen(
     navController: NavHostController,
     viewModel: WeatherViewModel = koinViewModel(),
     cities: List<City>

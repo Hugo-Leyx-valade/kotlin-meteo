@@ -13,6 +13,7 @@
     import com.example.tp1.data.model.City
     import com.example.tp1.ui.screens.CityList
     import com.example.tp1.ui.screens.WeatherScreen
+    import com.example.tp1.ui.screens.GeoScreen
     import com.example.tp1.ui.theme.Tp1Theme
 
     class MainActivity : ComponentActivity() {
@@ -195,7 +196,7 @@ fun AppNavigation() {
         }
 
         composable ("newCity"){
-            NewCityScreen(
+            GeoScreen(
                 navController = navController,
                 cities = cities
             )
