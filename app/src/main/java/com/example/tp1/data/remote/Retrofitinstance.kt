@@ -5,10 +5,18 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
 
-    private val retrofit = Retrofit.Builder()
+    private val retrofit_open_meteo = Retrofit.Builder()
         .baseUrl("https://api.open-meteo.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val api: WeatherApi = retrofit.create(WeatherApi::class.java)
+    val api_weather: WeatherApi = retrofit_open_meteo.create(WeatherApi::class.java)
+
+    private val retrofit_geolocalisation = Retrofit.Builder()
+        .baseUrl("https://api.open-meteo.com/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    val api_geo: GeoApi = retrofit_geolocalisation.create(GeoApi::class.java)
+
 }

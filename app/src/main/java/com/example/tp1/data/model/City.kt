@@ -1,3 +1,7 @@
 package com.example.tp1.data.model
 
-data class City (val name: String, val latitude: Double, val longitude: Double )
+data class City (var name: String, var latitude: Double, var longitude: Double )
+
+data class CitySearchResponse(
+    val results: City? = null
+)

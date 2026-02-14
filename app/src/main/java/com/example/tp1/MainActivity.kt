@@ -168,7 +168,14 @@ fun AppNavigation() {
 
     val navController = rememberNavController()
     var city by remember { mutableStateOf(City("Paris",2.333333,48.866667)) }
-
+    val cities = listOf(
+        City("Paris", 48.866667, 2.333333),
+        City("Lyon", 45.7578137, 4.8320114),
+        City("Rennes", 48.112, -1.6743),
+        City("Bordeaux", 44.841225, -0.5800364),
+        City("Marmande", 44.503594, 0.1655),
+        City("Casteljaloux", 44.503594, 0.1655),
+    )
     NavHost(
         navController = navController,
         startDestination = "list"
@@ -182,7 +189,15 @@ fun AppNavigation() {
             CityList(
                 navController = navController,
                 cityUP = city,
-                onChange = { city = it }
+                onChange = { city = it },
+                cities = cities
+            )
+        }
+
+        composable ("newCity"){
+            NewCityScreen(
+                navController = navController,
+                cities = cities
             )
         }
     }
